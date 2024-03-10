@@ -9,7 +9,7 @@ function ProductDetails() {
     const { products } = useContext(ProductsContext);
     const product = products.find(item => item.id === parseInt(id));
     const { image, price, description, category, title } = product || {};
-    const { increaseAmount } = useContext(CartContext);
+    const { addToCart } = useContext(CartContext);
     return (
         <section className="pt-56 pb-12 h-[80%] flex items-center ">
             <div className="container mx-auto ">
@@ -27,7 +27,7 @@ function ProductDetails() {
                         <p className="mb-8 text-slate-600 font-semibold "># {category} </p>
                         {/* plus & minus button  */}
                         <div className=" mx-auto mt-3 rounded-sm flex justify-around items-center ">
-                            <button onClick={() => increaseAmount(product, id)} className='text-[25px] bg-white text-slate-950 shadow-md py-2 px-4 rounded hover:translate-y-0.5 hover:shadow-lg '>Add to Cart</button>
+                            <button onClick={()=>{addToCart(product,product.id)}} className='text-[25px] bg-white text-slate-950 shadow-md py-2 px-4 rounded hover:translate-y-0.5 hover:shadow-lg '>Add to Cart</button>
                         </div>
                     </div>
                 </div>
