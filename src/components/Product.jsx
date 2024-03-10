@@ -7,7 +7,7 @@ import { FaPlus } from 'react-icons/fa6';
 
 function Product({ product }) {
   const { image, id, title, price } = product;
-  const { increaseAmount } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
 
   return (
     <div>
@@ -23,7 +23,7 @@ function Product({ product }) {
             <Link to={`/product/${id}`} >
               <FaEye className='text-[25px] text-slate-950 hover:text-amber-500 ' />
             </Link>
-            <Link onClick={() => increaseAmount(product, id)} >
+            <Link onClick={() => addToCart(product, id)} >
               <FaPlus className='text-[25px] text-slate-950 hover:text-cyan-500 ' />
             </Link>
           </div>
