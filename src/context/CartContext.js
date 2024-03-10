@@ -39,8 +39,8 @@ const CartProvider = ({ children }) => {
     setCart([]);
   };
 
-  // increase amount
-  const increaseAmount = (product,id) => {
+  // 
+  const addToCart = (product,id) => {
     const newItem = { ...product, amount: 1 };
     const cartItem = cart.find((item) => {
       return item.id === id;
@@ -57,6 +57,11 @@ const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, newItem]);
     }
+  };
+   // increase amount
+   const increaseAmount = (id) => {
+    const cartItem = cart.find((item) => item.id === id);
+    addToCart(cartItem, id);
   };
   //decrease amount
   const decreaseAmount = (id) => {
@@ -86,6 +91,7 @@ const CartProvider = ({ children }) => {
         removeFromCart,
         clearCart,
         increaseAmount,
+        addToCart,
         decreaseAmount,
         itemAmount,
         total,
