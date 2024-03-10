@@ -28,7 +28,7 @@ function CartItem({ item }) {
         <div className="w-[70%] h-[25px] flex justify-around items-center shadow mt-2">
           <button onClick={() => decreaseAmount(id)} className=""><FaMinus className='text-slate-950 hover:text-orange-500' /></button>
           <span className="">{amount} </span>
-          <button onClick={() => increaseAmount(item, id)} className=""><FaPlus className='text-slate-950 hover:text-cyan-500' /></button>
+          <button onClick={() => increaseAmount(id)} className=""><FaPlus className='text-slate-950 hover:text-cyan-500' /></button>
         </div>
       </div>
 
